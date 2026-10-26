@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KatieB Supermarket | Fresh Groceries and Everyday Essentials</title>
+  <meta name="description" content="Shop fresh produce, groceries, beverages, household essentials and more at KatieB Supermarket.">
+  <meta name="theme-color" content="#14532D">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KatieB Supermarket | Fresh Groceries and Everyday Essentials">
+  <meta property="og:description" content="Shop fresh produce, groceries, beverages, household essentials and more at KatieB Supermarket.">
+  <meta property="og:image" content="images/hero-aisle-1024.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%2322C55E'/%3E%3Cpath d='M9 17h22l-2.5 12.5a2 2 0 0 1-2 1.5h-13a2 2 0 0 1-2-1.5z' fill='%2314532D'/%3E%3Cpath d='M20 14c0-4 3-6 7-6 0 4-3 6-7 6z' fill='%23FBBF24'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    document.documentElement.classList.add('js');
+    // Preload the first hero photo only when the visitor lands on the homepage.
+    if (!location.hash || location.hash === '#/') {
+      var l = document.createElement('link');
+      l.rel = 'preload'; l.as = 'image'; l.href = 'images/hero-aisle-1024.webp';
+      l.setAttribute('imagesrcset', 'images/hero-aisle-640.webp 640w, images/hero-aisle-1024.webp 1024w, images/hero-aisle-1280.webp 1280w');
+      l.setAttribute('imagesizes', '100vw'); l.setAttribute('fetchpriority', 'high');
+      document.head.appendChild(l);
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <div class="announce" id="announce" hidden></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap bar">
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="logo" href="#/" aria-label="KatieB Supermarket home">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="11" fill="#22C55E"/>
+          <path d="M9 17h22l-2.5 12.5a2 2 0 0 1-2 1.5h-13a2 2 0 0 1-2-1.5z" fill="#14532D"/>
+          <path d="M14 17l4-6M26 17l-4-6" stroke="#14532D" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M20 14c0-4 3-6 7-6 0 4-3 6-7 6z" fill="#FBBF24"/>
+        </svg>
+        <span class="logo-text"><b>KatieB</b><small>Supermarket</small></span>
+      </a>
+
+      <div class="nav-panel" id="navPanel">
+        <nav class="nav" id="mainNav" aria-label="Main">
+          <a href="#/" data-nav="home">Home</a>
+          <a href="#/shop" data-nav="shop">Shop</a>
+          <a href="#/categories" data-nav="categories">Categories</a>
+          <a href="#/offers" data-nav="offers">Special Offers</a>
+          <a href="#/about" data-nav="about">About Us</a>
+          <a href="#/contact" data-nav="contact">Contact</a>
+        </nav>
+        <form class="search" id="headerSearch" role="search">
+          <label class="sr" for="hq">Search products</label>
+          <input id="hq" type="search" name="q" placeholder="Search products" autocomplete="off">
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <a class="cart-btn" id="cartBtn" href="#/cart" aria-label="Shopping cart, 0 items">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p class="noscript">KatieB Supermarket needs JavaScript to show products and the shopping cart. Please enable JavaScript.</p></noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

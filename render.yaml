@@ -1,0 +1,17 @@
+# Render Blueprint: deploys this folder as a static site (no build step).
+services:
+  - type: web
+    name: katieb-supermarket
+    runtime: static
+    buildCommand: echo "static site, nothing to build"
+    staticPublishPath: .
+    headers:
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /css/*
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /js/*
+        name: Cache-Control
+        value: public, max-age=3600
